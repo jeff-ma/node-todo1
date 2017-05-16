@@ -1,0 +1,49 @@
+<h1>Register</h1>
+<div class="row">
+<form class="form-horizontal" name="register" method="post" action="/register">
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="name">Name</label>  
+	  <div class="col-md-4">
+	  <input id="name" name="name" type="text" placeholder="Name" class="form-control input-md" value="{{name}}" required>
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="email">Email</label>  
+	  <div class="col-md-4">
+	  <input id="email" name="email" type="text" placeholder="Email" class="form-control input-md" value="{{email}}" required>
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="password">Password</label>  
+	  <div class="col-md-4">
+	  <input id="password" name="password" type="password" placeholder="Password" class="form-control input-md" value="{{password}}" required>
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="confirmPassword">Confirm Password</label>  
+	  <div class="col-md-4">
+	  <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Confirm Password" class="form-control input-md" value="{{password}}" required>
+	  </div>
+	</div>
+
+	<!-- Button -->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="login"></label>
+	  <div class="col-md-4">
+	    <button id="buttonRegister" name="buttonRegister" class="btn btn-primary">Register</button>
+	  </div>
+	</div>
+</form>
+</div>
+{{#if error}}
+<div class="row">
+	<p class="text-danger text-center"><strong>{{error}}</strong></p>
+</div>
+{{/if}}
