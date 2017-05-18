@@ -4,6 +4,42 @@
 <h2>Welcome {{userName}}</h2> 
 {{/if}}
 
+<div>
+	<form class="form-horizontal" method="post" action="/todo" name="form-todo" id="form-todo">
+		<!-- Text input-->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="title">Title</label>  
+		  <div class="col-md-4">
+		  <input id="title" name="title" type="text" placeholder="Title" class="form-control input-md" value="{{title}}">
+		  </div>
+		</div>
+
+		<!-- Textarea -->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="description">Description</label>
+		  <div class="col-md-4">                     
+		    <textarea class="form-control" id="description" name="description">{{description}}</textarea>
+		  </div>
+		</div>
+
+		<!-- Button -->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="buttonTodo"></label>
+		  <div class="col-md-4">
+		    <button id="buttonTodo" name="buttonTodo" class="btn btn-primary">Add</button>
+		  </div>
+		</div>
+	</form>
+<div>
+
+{{#if error}}
+<div class="row">
+{{#each error}}
+	<p class="text-danger text-center"><strong>{{this}}</strong></p>
+{{/each}}
+</div>
+{{/if}}
+
 {{#each data}}
-	<div>Title: {{this.Title}} Description: {{Description}} Created: {{Created}}</div>
+	<div>Title: {{this.Title}} Description: {{this.Description}} Created: {{this.Created}}</div>
 {{/each}}
